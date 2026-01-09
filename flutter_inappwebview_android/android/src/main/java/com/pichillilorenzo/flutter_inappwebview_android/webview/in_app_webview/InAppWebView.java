@@ -304,9 +304,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
       setDownloadListener(new DownloadStartListener());
 
     WebSettings settings = getSettings();
-    if (WebViewFeature.isFeatureSupported(WebViewFeature.PAYMENT_REQUEST)) {
-      WebSettingsCompat.setPaymentRequestEnabled(settings, customSettings.paymentRequestEnabled);
-    }
+    WebSettingsCompat.setPaymentRequestEnabled(settings, true);
 
     settings.setJavaScriptEnabled(customSettings.javaScriptEnabled);
     settings.setJavaScriptCanOpenWindowsAutomatically(customSettings.javaScriptCanOpenWindowsAutomatically);
